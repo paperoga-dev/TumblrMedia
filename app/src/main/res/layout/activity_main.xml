@@ -107,7 +107,8 @@
             android:paddingRight="10sp"
             android:paddingBottom="10sp"
             android:scrollbars="horizontal|vertical"
-            android:singleLine="false" />
+            android:singleLine="false"
+            android:textColor="@color/black" />
 
         <ProgressBar
             android:id="@+id/progressBar"
