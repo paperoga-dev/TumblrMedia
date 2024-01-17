@@ -134,13 +134,13 @@ public class MainActivity extends AppCompatActivity {
 
                                 for (final String line : ffProbeOutputLines) {
                                     Matcher videoDataMatcher = videoDataRegEx.matcher(line);
-                                    if (videoDataMatcher.find()) {
-                                        String[] timeParts = Objects.requireNonNull(videoDataMatcher.group(1)).split(":");
+                                    if (videoDataMatcher.find() && videoDataMatcher.groupCount() >= 1) {
+                                        String[] timeParts = videoDataMatcher.group(1).split(":");
                                         videoDuration = Integer.parseInt(timeParts[0]) * 3600 + Integer.parseInt(timeParts[1]) * 60 + Math.round(Float.parseFloat(timeParts[2]));
                                     } else if (fromPosSet || toPosSet) {
                                         Matcher videoFrameMatcher = videoFrameRegEx.matcher(line);
-                                        if (videoFrameMatcher.find() && videoFrameMatcher.groupCount() > 1) {
-                                            ffProbeData.add(Float.parseFloat(Objects.requireNonNull(videoFrameMatcher.group(1))));
+                                        if (videoFrameMatcher.find() && videoFrameMatcher.groupCount() >= 1) {
+                                            ffProbeData.add(Float.parseFloat(videoFrameMatcher.group(1)));
                                         }
                                     }
                                 }
