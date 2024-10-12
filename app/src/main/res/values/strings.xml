@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TumblrMedia</string>
+    <string name="title_activity_main">TumblrMedia</string>
+    <string name="set_from">Set from</string>
+    <string name="set_to">Set to</string>
+    <string name="reset">Reset</string>
+    <string name="open">Open</string>
+    <string name="convert">Convert</string>
+    <string name="kill">Kill</string>
+</resources>
